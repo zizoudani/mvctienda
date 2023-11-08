@@ -10,7 +10,7 @@ class AdminSession
         session_start();
 
         if (isset($_SESSION['admin'])) {
-            $this->user = $_SESSION['admin'];
+            $this->user = $_SESSION['user'];
             $this->login = true;
 
         } else {
