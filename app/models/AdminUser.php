@@ -32,19 +32,40 @@ class AdminUser
             ];
             $query = $this->db->prepare($sql);
             $response = $query->execute($params);
+
+        if ($response == 0) {
+            return $response;
         }
 
+        $sql2 = 'INSERT INTO users(adminUser, first_name, email, password) 
+            VALUES (1, :name, :email, :password)';
+        $params2 = [
+            ':name' => $data['name'],
+            ':email' => $data['email'],
+            ':password' => $pass,
+        ];
+
+        $query2 = $this->db->prepare($sql2);
+        $response = $response + $query2->execute($params2);
+    }
         return $response;
     }
 
     public function existsEmail($email)
     {
-        $sql = 'SELECT * FROM admins WHERE email=:email';
+        $sql = 'SELECT * FROM admins WHERE email=:email AND deleted=0';
         $query = $this->db->prepare($sql);
         $query->bindParam(':email', $email, PDO::PARAM_STR);
         $query->execute();
 
-        return $query->rowCount();
+        $count =  (int) $query->rowCount();
+
+        $sql2 = 'SELECT * FROM users WHERE email=:email';
+        $query2 = $this->db->prepare($sql2);
+        $query2->bindParam(':email', $email, PDO::PARAM_STR);
+        $query2->execute();
+
+        return  $count + (int) $query2->rowCount();
     }
 
     public function getUsers()

@@ -68,6 +68,11 @@
                 <li class="nav-item">
                     <a href="<?= ROOT ?>adminShop/logout" class="nav-link">Cerrar sesión</a>
                 </li>
+                <?php if(isset($_SESSION['adminUser']) && $_SESSION['adminUser']): ?>
+                    <li class="nav-item">
+                        <a href="<?= ROOT ?>adminShop" class="nav-link">Administrar tienda</a>
+                        <?php endif; ?>
+                    </li>
             </ul>
         <?php endif; ?>
     </div>
