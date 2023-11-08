@@ -69,7 +69,7 @@ class Login
         $headers = 'MIME-Version: 1.0\r\n';
         $headers .= 'Content-type:text/html; charset=UTF-8\r\n';
         $headers .= 'FROM: mvctienda\r\n';
-        $headers .= 'Reply-to: admin@mvctienda.local';
+        $headers .= 'Reply-to: admin@proyecto12.local';
 
         $subject = "Cambiar la contraseña en mvctienda";
 

@@ -10,7 +10,7 @@ class MySQLdb
     private $host = 'mysql';
     private $user = 'default';
     private $pass = 'secret';
-    private $dbname = 'mvctienda';
+    private $dbname = 'examen';
 
     //Atributos
     private static $instancia = null;
