@@ -11,7 +11,7 @@ class AdminUserController extends Controller
 
     public function index()
     {
-        $session = new Session();
+        $session = new AdminSession();
 
         $users = $this->model->getUsers();
 
