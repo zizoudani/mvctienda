@@ -11,7 +11,7 @@
         <h1 class="text-center">Vista de usuarios - Crear usuario</h1>
     </div>
     <div class="card-body">
-        <form action="<?= ROOT ?>adminuser/create" method="POST">
+    <form action="<?= ROOT ?>adminuser/store/" method="POST">
             <div class="form-group text-left mb-2">
                 <label for="name">Usuario:</label>
                 <input type="text" name="name" id="name"
