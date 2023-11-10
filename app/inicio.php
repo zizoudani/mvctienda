@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 //Constantes iniciales
 define('ROOT', DIRECTORY_SEPARATOR);
 define('APP', ROOT . 'app' . ROOT);
-define('URL', '/var/www/mvctienda');
+define('URL', '/var/www/proyecto12');
 define('VIEWS', URL . APP . 'views' . ROOT);
 define('ENCRIPTKEY', 'elperrodesanroque');
 
@@ -15,5 +15,3 @@ require_once 'libs/Controller.php';
 require_once 'libs/Application.php';
 require_once 'libs/Session.php';
 require_once 'libs/Validate.php';
-
-
