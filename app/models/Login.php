@@ -27,7 +27,8 @@ class Login
 
             $password = hash_hmac('sha512', $data['password1'], ENCRIPTKEY);
 
-            $sql = 'INSERT INTO users(first_name, last_name_1, last_name_2, email, address, city, state, postcode, country, password) VALUES (:first_name, :last_name_1, :last_name_2, :email, :address, :city, :state, :postcode, :country, :password)';
+            $sql = 'INSERT INTO users(first_name, adminUser last_name_1, last_name_2, email, address, city, state, postcode, country, password)
+             VALUES (:first_name, 0, :last_name_1, :last_name_2, :email, :address, :city, :state, :postcode, :country, :password)';
 
             $params = [
                 ':first_name' => $data['first_name'],
@@ -69,7 +70,7 @@ class Login
         $headers = 'MIME-Version: 1.0\r\n';
         $headers .= 'Content-type:text/html; charset=UTF-8\r\n';
         $headers .= 'FROM: mvctienda\r\n';
-        $headers .= 'Reply-to: admin@mvctienda.local';
+        $headers .= 'Reply-to: admin@proyecto12.local';
 
         $subject = "Cambiar la contraseña en mvctienda";
 

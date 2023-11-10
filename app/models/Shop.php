@@ -49,6 +49,6 @@ class Shop
 
         $subject = 'Mensaje del usuario ' . $name;
 
-        return mail('info@mvctienda.local', $subject, $msg, $headers);
+        return mail('info@proyecto12.local', $subject, $msg, $headers);
     }
 }

@@ -11,10 +11,10 @@ class AdminProductController extends Controller
 
     public function index()
     {
-        $session = new Session();
+        $session = new AdminSession();
 
         if ($session->getLogin()) {
-            $products = $this->model->getProducts();
+            $products = $this->model->getProductsList();
             $type = $this->model->getConfig('productType');
 
             $data = [

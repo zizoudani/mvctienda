@@ -52,6 +52,11 @@
                 <li class="nav-item">
                     <a href="<?= ROOT . 'shop/logout' ?>" class="nav-link">Salir</a>
                 </li>
+                <?php if(isset($_SESSION['adminUser']) && $_SESSION['adminUser']): ?>
+                    <li class="nav-item">
+                        <a href="<?= ROOT ?>adminShop" class="nav-link">Administrar tienda</a>
+                        <?php endif; ?>
+                    </li>
             </ul>
         <?php endif; ?>
         <?php if (isset($data['admin']) && $data['admin']): ?>
@@ -64,6 +69,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?= ROOT ?>admincarts/sales" class="nav-link">Ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= ROOT ?>adminshop/logout" class="nav-link">Cerrar sesión</a>
                 </li>
             </ul>
         <?php endif; ?>

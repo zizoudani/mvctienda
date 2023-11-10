@@ -4,7 +4,7 @@
         <h1 class="text-center">Vista de usuarios - Eliminación</h1>
     </div>
     <div class="card-body">
-        <form action="<?= ROOT ?>adminuser/delete/<?= $data['data']->id ?>" method="POST">
+    <form action="<?= ROOT ?>adminUser/destroy/<?= $data['data']->id ?>" method="POST">
             <div class="form-group text-left mb-2">
                 <label for="name">Usuario:</label>
                 <input type="text" name="name" id="name"
